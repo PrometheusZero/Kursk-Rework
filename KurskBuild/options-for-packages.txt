@@ -1,0 +1,12 @@
+gulp
+
+gulp-htmlclean	-minify html
+gulp-uglify	-minify js
+cssnano		-minify css
+
+gulp-stylus	-compile stylus ss into css
+gulp-pug		-compile pug into html
+gulp-eslint	-js linter
+
+gulp-nodemon	-server restarter
+browsersync	-server restarter

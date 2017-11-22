@@ -1,0 +1,16 @@
+doctype html
+html
+    include includes/head.pug
+    body
+        include includes/navbar.pug
+
+        #wpnGenContainer.gamePage
+            include includes/weaponPreselect.pug
+            include includes/weaponCustomGen.pug
+
+        #charGenContainer.gamePage
+            include includes/characterCustomGen.pug
+            
+        #vehGenContainer.gamePage
+            include includes/vehicleCustomGen.pug
+            

@@ -1,0 +1,102 @@
+//- WARNING - THIS IS NOT FINALISED
+//- NO LOGIC BEHIND THIS NOR ARE THE OUTPUT TABLE TD'S TAGGED
+
+.container-div
+    table#preselectorTable
+        thead
+            tr
+                th(colspan='2') PRE-SELECT
+        tbody
+            tr
+                td(colspan='2')
+                    select#preselector
+                        option(value='ord') Ordnance
+                        option(value='hvy') Heavy
+                        option(value='basic') Basic
+                        option(value='pistol') Pistol
+            tr#ordnancePreselect.preselect
+                td(colspan='2')
+                    select
+                        option Battlecannon
+                        option Punisher Gatling
+                        option Nova Blaster
+                        option Plasma Executioner
+            tr#heavyPreselect.preselect
+                td(colspan='2')
+                    select
+                        option Lascannon
+                        option Plasma Cannon
+                        option Heavy Bolter
+                        option Heavy Stubber
+            tr#basicPreselect.preselect
+                td(colspan='2')
+                    select
+                        option Lasgun
+                        option Bolgun
+                        option Autogun
+                        option Plasma Gun
+            tr#pistolPreselect.preselect
+                td(colspan='2')
+                    select
+                        option Laspistol
+                        option Bolt Pistol
+                        option Plasma Pistol
+                        option Stub Gun
+            tr
+                td(colspan='2')
+                    select
+                        option Poor
+                        option(selected) Ordinary
+                        option Fine
+                    input(type='button' value='GO!')
+            tr
+                th Data
+                th Value
+            tr
+                td Name: 
+                td.dpe
+            tr
+                td Type:
+                td.dpe
+            tr
+                td Strength:
+                td.dpe
+            tr
+                td Die 1:
+                td.dpe
+            tr
+                td Die 2:
+                td.dpe
+            tr
+                td Range: 
+                td.dpe
+            tr
+                td Acc &#37;:
+                td.dpe
+            tr
+                td Acc /in:
+                td.dpe
+            tr
+                td RoF:
+                td.dpe
+            tr
+                td Blast:
+                td.dpe
+            tr
+                td Size:
+                td.dpe
+            tr
+                td Delay:
+                td.dpe
+            tr
+                td Ord Rating:
+                td.dpe
+            tr
+                td Total Cost:
+                td.dpr
+            tr
+                td Total Weight:
+                td.dpe
+            tr
+                td(colspan='2')
+                    input(type='button' value='BUY!' disabled)

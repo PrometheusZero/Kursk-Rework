@@ -1,0 +1,102 @@
+.container-div
+    table
+        thead
+            tr
+                th(colspan='2') CUSTOM GENERATE
+        tbody
+            tr
+                th Data
+                th Value
+            tr
+                td Name:
+                td
+                    input#wpnName.textInput(type='text' value='')
+            tr
+                td Type:
+                td
+                    select#wpnType
+                        option(value='e') Energy
+                        option(value='p') Projectile
+            tr
+                td Strength:
+                td
+                    select#wpnStr.wpnConst
+                        each val in [1,2,3,4,5,6,7,8,9,10]
+                            option(value=val)= val
+            tr
+                td Die 1:
+                td
+                    select#wpnDie1.wpnConst
+                        each val in [2,4,6,8,10,12]
+                            option(value=val)= val
+            tr 
+                td Die2: 
+                td
+                    select#wpnDie2.wpnConst
+                        each val in[2,4,6,8,10,12]
+                            option(value=val)= val
+            tr
+                td Range:
+                td
+                    select#wpnRng.wpnConst
+                        each val in [6,12,18,24,30,36,48,60,72]
+                            option(value=val)= val
+            tr
+                td Acc &#37;:
+                td
+                    select#wpnAccX.wpnConst
+                        each val in [1,2,3,4]
+                            option(value=val)= val
+            tr
+                td Acc /in:
+                td
+                    selec#wpnAccY.wpnConst
+                        each val in [1,2,3,4]
+                            option(value=val)= val
+            tr
+                td Rof:
+                td
+                    select#wpnRoF.wpnConst
+                        each val, index in {0:'Single', 1:'1 Fire Dice', 2:'2 Fire Dice', 3:'3 Fire Dice', 4:'4 Fire Dice'}
+                            option(value=index)= val
+            tr
+                td Blast:
+                td
+                    select#wpnBR.wpnConst
+                        each val, index in {0:'None', 1:'1" Radius', 2:'2" Radius', 3:'3" Radius', 4:'4" Radius'}
+                            option(value=index)= val
+            tr
+                td Size:
+                td
+                    select#wpnCat.wpnConst
+                        each val, index in {0.33:'Ordnance', 0.85:'Partial', 1:'Basic', 2:'Pistol'}
+                            option(value=index)= val
+            tr#delayRow
+                td Delay:
+                td
+                    select#wpnDelay.wpnConst
+                        each val, index in {1:'None', 0.85:'partial', 0.666:'Full', 0.125:'One Shot'}
+                            option(value=index)= val
+            tr#ordRow
+                td Ord Rating:
+                td
+                    select#wpnOR.wpnConst
+                        each val in [2,3,4,5,6]
+                            option(value=val)= val
+            tr
+                td Weight Mod:
+                td
+                    select#wpnWgt.wpnConst
+                        each val in [0.25, 0.33, 0.5, 1,2,3,4]
+                            option(value=val)= val
+            tr
+                td#wpnWarning &nbsp;
+                td
+                    input#wpnGen(type='button' value='GO!' disabled)
+                    input#wpnBUY(type='button')
+            tr
+                td Total Cost:
+                td#totalCost.dpe 0
+            tr
+                td Total Weight:
+                td#totalWgt.dpe

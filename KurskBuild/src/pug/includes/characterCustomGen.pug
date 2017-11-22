@@ -1,0 +1,65 @@
+//-NNED TO ADJUSDT CODE FOR REMOVING COST FROM CHARACTER NAME. UPON SELECTION OF CHARACTER, DISPLAY COST (IF DOESNT ALREADY)
+
+.container-div
+    table
+        tr
+            th Stat
+            th Value
+        tr
+            td(colspan='2')
+                input#charName.textInput(type='text' value='')
+        tr
+            td(colspan='2')
+                select#charGen(disabled)
+                    option(value='' selected disabled) Buy Char
+                    each val in ['Leader', 'Engineer', 'Fighter', 'Green']
+                        option(value=val)= val
+        tr
+            td Name
+            td#nameStat.dpe
+        tr
+            td Rank
+            td#rankStat.dpe
+        tr
+            td M
+            td#moveStat.dpe
+        tr
+            td WS
+            td#wsStat.dpe
+        tr
+            td BS
+            td#bsStat.dpe
+        tr
+            td S
+            td#sStat.dpe
+        tr
+            td T
+            td#tStat.dpe
+        tr
+            td W
+            td#wStat.dpe
+        tr
+            td I
+            td#iStat.dpe
+        tr
+            td A
+            td#aStat.dpe
+        tr
+            td Ld
+            td#ldStat.dpe
+        tr
+            td Cost
+            td#costStat.dpe
+        tr
+            td Weight
+            td#weightStat.dpe
+        tr
+            td Carry Cap
+            td#carryStat.dpe
+        tr
+            td Start XP
+            td#xpStat.dpe
+        tr
+            td &nbsp;
+            td
+                input#charBUY(type='button' value='BUY!' disabled)

@@ -1,0 +1,38 @@
+.container-div
+    table
+        tr
+            th
+                input#vehName.textInput(type='text' value='')
+            each val in ['Front', 'Left', 'Right', 'Rear', 'Roof']
+                th= val
+        tr
+            th Object 1
+            // FRONT
+            td
+                select#vehEng
+                    option(value='' selected disabled) Engine
+                    each val in [30000, 60000, 90000, 120000, 150000, 180000, 210000, 240000, 270000, 300000]
+                        option(value=val)= val
+            // LEFT
+            td
+                select#leftLoco.vehLoco
+                    option(value='' selected disabled) Loco
+                    option(value='track') Tracked
+                    option(value='wheeled') Wheeled
+            // RIGHT
+            td
+                select#rightLoco.vehLoco
+                    option(value='' selected disabled) Loco
+                    option(value='track') Tracked
+                    option(value='wheeled') Wheeled
+            // REAR
+            td
+                select#rearPanel
+                    option(value='') &nbsp;
+                    option(value='hatch') Hatch
+            // ROOF
+            td
+                select#roofMount
+                    option(value='') &nbsp;
+                    each val, index in {lt:'L Turret', ht: 'H Turret', fm: 'Fixed Mount'}
+                        option(value=index)= val
