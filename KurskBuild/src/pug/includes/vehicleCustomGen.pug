@@ -1,3 +1,19 @@
+//- Mixin Declaration
+mixin armour
+    option(value='4') 4
+    option(value='8') 8
+    option(value='12') 12
+    option(value='16') 16
+    option(value='20') 20
+
+mixin thick
+    option(value='2') Thin
+    option(value='3') Light
+    option(value='4') Medium
+    option(value='5') Heavy
+    option(value='6') Thick
+
+//- main structure
 .container-div
     table
         tr
@@ -36,3 +52,139 @@
                     option(value='') &nbsp;
                     each val, index in {lt:'L Turret', ht: 'H Turret', fm: 'Fixed Mount'}
                         option(value=index)= val
+        tr
+            th Object 2
+            // FRONT
+            td.dpe Driver
+            // LEFT
+            td
+                select#leftPanel
+                    option(value='') &nbsp;
+                    option(value='hatch') Hatch
+                    option(value='sponson') Sponson
+            // RIGHT
+            td
+                select#rightPanel
+                    option(value='') &nbsp;
+                    option(value='hatch') Hatch
+                    option(value='sponson') Sponson
+            // REAR
+            td#rearPintleSelector.dpe
+                select#rearPintle.initHide
+                    option(value='') &nbsp;
+                    option(value='1') Pintle
+            // ROOF
+            td
+                select#roofCupola
+                    option(value='') &nbsp;
+                    option(value='cupola') Cupola
+                    option(value='1') Pintle
+        tr
+            th Object 3
+            // FRONT
+            td.dpe &nbsp;
+            // LEFT
+            td#leftPintleSelector.dpe
+                select#leftPintle.initHide
+                    option(value='') &nbsp;
+                    option(value='1') Pintle
+            // RIGHT
+            td#rightPintleSelector.dpe
+                select#rightPintle.initHide
+                    option(value='') &nbsp;
+                    option(value='1') Pintle
+            // REAR
+            td.dpe
+            // ROOF
+            td#roofSelector
+                select#roofHatch
+                    option(value='') &nbsp;
+                    each val, index in {hatch:'Hatch', 1:'1 Pintle', 2:'2 Pintle'}
+                        option(value=index)= val
+        tr
+            th Object 4
+            - for (var x=0;x<4;x++)
+                td.dpe &nbsp;
+            td#roofPintleFacingSelector.dpe
+                select#roofPintleFacing.initHide
+                    each val, index in {front:'Front', rear:'Rear', left:'Left', right:'Right'}
+                        option(value=index)= val
+        tr
+            th Object 5
+            - for (var x=0;x<4;x++)
+                td.dpe &nbsp;
+            td.dpe
+                span#roofPintleSecondFAcing.initHide Rear
+        tr
+            th Arm Vs E:
+            td
+                select#frontArmVsE
+                    +armour
+            td
+                select#leftArmVsE
+                    +armour
+            td
+                select#rightArmVsE
+                    +armour
+            td
+                select#rearArmVsE
+                    +armour
+            td
+                select#roofArmVsE.initHide
+        tr
+            th Arm Vs P:
+            td
+                select#frontArmVsP
+                    +armour
+            td
+                select#leftArmVsP
+                    +armour
+            td
+                select#rightArmVsP
+                    +armour
+            td
+                select#rearArmVsP
+                    +armour
+            td
+                select#roofArmVsP.initHide
+                    +armour
+        tr
+            th Thickness:
+            td
+                select#frontArmT
+                    +thick
+            td
+                select#leftArmT
+                    +thick
+            td
+                select#rightArmT
+                    +thick
+            td
+                select#rearArmT
+                    +thick
+            td
+                select#roofArmT.initHide
+                    +thick
+        tr
+            th Armour:
+            each val in ['frontArmName', 'leftArmName', 'rightArmName', 'rearArmName', 'roofArmName']
+                td(id=val)
+        tr
+            th HP:
+            each val in ['frontArmHP', 'leftArmHP', 'rightArmHP', 'rearArmHP', 'roofArmHP']
+                td(id=val)
+        tr
+            th Weight:
+            td#vehTotalWeight
+            th Cost:
+            td#vehTotalCost
+            th Speed:
+            td#vehTotalSpeed
+        tr
+            th Req. Crew
+            td#vehTotalCrew
+            th Pass. Space
+            td#vehTotalPass
+            td(colspan='2')
+                input#vehGen(type='button' value='CALCULATE!' disabled)
+                input#vehBUY(type='button' value='BUY!' disabled)

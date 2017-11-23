@@ -1,0 +1,23 @@
+#wpnInvContainer.gamePage
+    .container-div
+        table#wpnStorage
+            tr
+                each val in ['Name', 'Size', 'Str', 'Die', 'Range', 'Wgt', 'Cost', 'Info']
+                    th= val
+    #wpnInfoContainer.infoContainer
+
+#charInvContainer.gamePage
+    .container-div
+        table#charStorage
+            tr
+                each val in ['Name', 'Rank', 'M', 'WS', 'BS', 'S', 'T', 'W' 'I', 'A', 'Ld', 'Info']
+                    th= val
+    #charInfoContainer.infoContainer
+
+#vehInvContainer.gamePage
+    .container-div
+        table#vehicleStorage
+            tr
+                each val in ['Name', 'Speed', 'Weight', 'Crew Req.', 'Passengers', 'Cost', 'Info']
+                    th= val
+    #vehInfoContainer.infoContainer
